@@ -29,5 +29,14 @@ select count(fName) from employee, dept_emp, department where employee.emp_id = 
 ### SQL Joins
 ```
 select fName, lName, salary from employee inner join dept_emp on dept_emp.emp_id = employee.emp_id;
-
+select fName from employee left join dept_emp on employee.emp_id = dept_emp.emp_id;
 ```
+- The LEFT JOIN keyword returns all records from the left table (table1), and the matched records from the right table (table2). The result is NULL from the right side, if there is no match.
+- The RIGHT JOIN keyword returns all records from the right table (table2), and the matched records from the left table (table1). The result is NULL from the left side, when there is no match.
+- The FULL OUTER JOIN keyword return all records when there is a match in left (table1) or right (table2) table records.
+- A self JOIN is a regular join, but the table is joined with itself.
+
+## Normalization
+- First Normal Form eliminates repeating groups by putting each into a separate table and connecting them with a one-to-many relationship.
+- Second Normal Form requires that every non-key attribute must depend on the whole of every candidate key and not on just a part of a key; No partial Dependencies
+- Third Normal Form requires that non-key attributes must depend only on candidate keys; No non-primary dependencies
